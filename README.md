@@ -1,0 +1,2 @@
+# paginatjs
+paginate navigation array
