@@ -1,0 +1,67 @@
+  var cars = [222,333,323,1,2,3,4,5,6,7,8,9,10,11,12,23,44,45,46,74,45565,65,6565];
+  <div id=dem></div>            
+    
+<div id=demo></div>            
+</div>
+
+<script type="text/javascript">	
+
+	var cars = [222,333,323,1,2,3,4,5,6,7,8,9,10,11,12,23,44,45,46,74,45565,65,6565];
+//esc0 = LZString.decompressFromEncodedURIComponent(data)
+//esc1=JSON.parse(esc0);
+	//document.write(esc1[0]);
+	
+pagef=15;
+npage=0;
+ppage=0;
+cpage=0;
+stp=0;
+//cars=esc1;
+esc1=cars;
+//maxr=esc1.length;
+function navpage(pagef,st,arry){
+
+
+sty='" itemprop="thumbnail" alt="Image description" />   </a>';
+var z = Math.floor(maxar/pagef);
+
+dp="";
+if (st==0) {stp=0;cpage=0;max=stp+pagef;}
+
+////if ((st==3) && (stp==cpage)) {stp=maxar-(maxar%pagef)-pagef;cpage=stp;}
+if ((st==1) && ((cpage+pagef)<maxar) && (cars[i]!='undefined')) { stp=cpage+pagef; cpage=stp;max=stp+pagef;}
+if((st==2) && (cpage+pagef)>pagef) {stp=cpage-pagef;cpage=stp; max=stp+pagef;} 
+//if((st==2) && ((cpage+pagef)>maxar) && (cars[maxar]='undefined') ) {stp=cpage-pagef;cpage=stp; max=stp-pagef;} 
+
+//if ((st==3) && ((cpage+pagef)<maxar) && (cars[maxar]='undefined')) {stp=maxar-(maxar%pagef);cpage=stp;max=stp+pagef;}
+if((st==3) && ((cpage+pagef)<maxar)  ) {stp=z*pagef;max=stp+pagef;cpage=stp; } 
+//if ((st==3) && (cars[maxar]='undefined') && (cpage=maxar)) {stp=cpage-pagef;} 
+ //max=stp+pagef;// else max=maxar;
+if((st==3) && ((cpage+pagef)>=maxar)  ) {stp=(z*pagef)-pagef;max=stp+pagef;cpage=stp; }  	
+if((st==3) && ((cpage+pagef)<maxar)  ) {stp=(z*pagef);max=stp+pagef;cpage=stp; }  	
+for (var i = stp,  text = ""; i< max; i++) {
+ 	datz=cars[i];
+ if (datz=== undefined)  {datz="";} else text += i+":"+datz+"<br>" ;
+
+}
+//if ((st==3) && (cars[i]!='undefined')) {stp=maxar-(maxar%pagef);cpage=stp;maxar=maxar-1;}
+//text+=cars.length;
+//lastp=arry.length-3;
+ppage=cpage/pagef;
+linkh=maxar+":"+(cpage+pagef);
+linkh+='<a href=# onclick=navpage(pagef,0,cars);>First</a>';
+if ((stp+pagef)<maxar)  linkh+='!<a href=# onclick=navpage(pagef,"1",cars);>Next</a>'; else linkh+='!<a href=#>Next</a>';
+linkh+='!<a href=# onclick=navpage(pagef,"2",cars);>Prev</a>';
+  if ((stp+pagef)<maxar) linkh+='|<a href=# onclick=navpage(pagef,"3",cars);>LAST</a>'; else linkh+='|<a href=#>LAST</a>';
+document.getElementById("dem").innerHTML = linkh+":-"+maxar+"-"+"C"+cpage+";stp:"+stp+":"+ppage+"::"+z+";x;"+pagef;
+document.getElementById("demo").innerHTML = text;
+}
+//
+</script>
+
+
+<script>
+maxar=cars.length;  
+navpage(pagef,0,esc1)
+
+</script>
